@@ -17,18 +17,18 @@ public class ProductPage {
         PageFactory.initElements(webDriver, this);
     }
 
-    @FindBy(className = "secondary") //я пыталась сами по сиэсэсу делай касруга
+    @FindBy(className = "secondary")
     WebElement addToCartButton;
 
     @FindBy(xpath = "//a[@href='/cart/']")
     WebElement toCartButton;
 
-    public ProductPage clickGoToCart() {
+    public ProductPage clickGoToCart(){
         toCartButton.click();
         return this;
     }
 
-    public ProductPage clickAddToCartButton() {
+    public ProductPage clickAddToCartButton(){
         addToCartButton.click();
         return this;
     }
@@ -37,7 +37,7 @@ public class ProductPage {
         return toCartButton;
     }
 
-    public ProductPage pause(WebElement webElement) {
+    public ProductPage pause(WebElement webElement){
         new WebDriverWait(webDriver, Duration.ofMillis(10000)).until(ExpectedConditions.elementToBeClickable(webElement));
         return this;
     }
